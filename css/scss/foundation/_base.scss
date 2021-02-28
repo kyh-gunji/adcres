@@ -1,0 +1,45 @@
+// body, htmlの設定
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: $mainFont;
+    font-weight: bold;
+    color: $black;
+    list-style: none;
+}
+
+// 共通 inner
+// インナー
+.inner {
+    width: auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    @media #{$mq-pc} {
+        width: (1024/$vw-pc)*100vw;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+// SP, PC表示非表示
+._sp {
+    @media #{$mq-pc} {
+        display: none;
+    }
+}
+._pc {
+    display: none;
+    @media #{$mq-pc} {
+        display: block;
+    }
+}
+
+// その他
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+img {
+    width: 100%;
+}

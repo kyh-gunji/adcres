@@ -1,0 +1,29 @@
+$initType: "normal";
+
+@mixin _logo($type: $initType) {
+    color: $blue;
+    font-weight: $medium;
+    font-family: $enFont;
+    letter-spacing: 0.05em;
+    @if ($type == "small") {
+        font-size: (24 / $vw-sp) * 100vw;
+        line-height: 1.9;
+        @media #{$mq-pc} {
+            font-size: 24px;
+            border: 1px solid $gray;
+        }
+        a {
+            &:hover {
+                opacity: .7;
+            }
+            @media #{$mq-pc} {
+            padding: 4px 56px;
+            }
+        }
+    } @else if ($type == "large") {
+        font-size: (80 / $vw-sp) * 100vw;
+        @media #{$mq-pc} {
+            font-size: 100px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// VW計算用
+$vw-sp: 375;
+$vw-pc: 1280;
+
+// ブレークポイント
+$bp-sp: 768px;
+
+// メディアクエリ モバイルファースト
+$mq-pc: "print, screen and (min-width: #{$bp-sp})";
+
+// カラー
+$black: #000;
+$gray: #707070;
+$lightGray: #efefef;
+$white: #fff;
+$red: #e66969;
+$blue: #2852ab;
+$lightBlue: #e8edfc;
+$lightBeige: #fafbff;
+
+// フォント
+$mainFont: "Noto Sans JP", "Poppins", sans-serif;
+$jpFont: "Noto Sans JP", sans-serif;
+$enFont: "Poppins", sans-serif;
+$medium: 500;
+$blackFont: 900;
+@font-face {
+    font-family: "DIN Alternate Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("DIN Alternate Bold"), url("../../../fonts/DINAlternate-Bold.woff") format("woff");
+} 
+$din: "DIN Alternate Bold";

@@ -1,0 +1,171 @@
+$initType: "normal";
+@mixin _circle($type: $initType) {
+    border-radius: 50%;
+    color: $white;
+    position: relative;
+    text-align: center;
+    .circle-txt {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if ($type == "mv") {
+        background-color: $red;
+        height: (103 / $vw-sp) * 100vw;
+        width: (103 / $vw-sp) * 100vw;
+        font-size: (12 / $vw-sp) * 100vw;
+        font-weight: $medium;
+        @media #{$mq-pc} {
+            height: (157 / $vw-pc) * 100vw;
+            width: (157 / $vw-pc) * 100vw;
+            font-size: (16 / $vw-pc) * 100vw;
+        }
+        .circle-txt {
+            font-weight: $medium;
+            line-height: 1.4;
+        }
+        &:first-of-type {
+            .circle-accent {
+                @media #{$mq-pc} {
+                    font-weight: $medium;
+                }
+            }
+        }
+        .circle-number {
+            font-weight: bold;
+            font-size: (26 / $vw-sp) * 100vw;
+            @media #{$mq-pc} {
+                font-size: (40 / $vw-pc) * 100vw;
+            }
+        }
+        .circle-accent {
+            line-height: 1;
+            display: block;
+            color: $blue;
+            font-size: (17 / $vw-sp) * 100vw;
+            margin-bottom: (6 / $vw-sp) * 100vw;
+            @media #{$mq-pc} {
+                font-size: (27 / $vw-pc) * 100vw;
+                margin-bottom: (4 / $vw-pc) * 100vw;
+            }
+        }
+    } @else if ($type == "point") {
+        background-color: $blue;
+        height: 185px;
+        width: 185px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        font-family: $din;
+        @media #{$mq-pc} {
+            left: unset;
+            transform: unset;
+        }
+        .circle-number {
+            font-size: 75px;
+        }
+    } @else if ($type == "merit") {
+        color: $gray;
+        background-color: $red;
+        border: 4px solid $black;
+        border-radius: 50%;
+        height: (114 / $vw-sp) * 100vw;
+        width: (114 / $vw-sp) * 100vw;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: (17 / $vw-sp) * 100vw;
+        font-family: $din;
+        @media #{$mq-pc} {
+            height: (134 / $vw-pc) * 100vw;
+            width: (134 / $vw-pc) * 100vw;
+            font-size: (20 / $vw-pc) * 100vw;
+        }
+        .circle-number {
+            color: $white;
+            font-size: (41 / $vw-sp) * 100vw;
+            @media #{$mq-pc} {
+                font-size: (48 / $vw-pc) * 100vw;
+            }
+        }
+    } @else if ($type == "feature") {
+        position: absolute;
+        z-index: 1;
+        top: (-41 / $vw-sp) * 100vw;
+        background-color: $red;
+        color: $white;
+        border: 1px solid $black;
+        height: (57 / $vw-sp) * 100vw;
+        width: (60 / $vw-sp) * 100vw;
+        font-size: (16 / $vw-sp) * 100vw;
+        &::after, &::before {
+            left: 86%;
+            top: 87%;
+            border: solid transparent;
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(40deg);
+        }
+        &::after {
+            border-left-color: $red;
+            border-width: (6/$vw-sp)*100vw;
+            margin-top: (-6/$vw-sp)*100vw;
+            @media #{$mq-pc} {
+                border-width: (6/$vw-pc)*100vw;
+                margin-top: (-6/$vw-pc)*100vw;
+            }
+        }
+        &::before {
+            border-left-color: $black;
+            border-width: (7/$vw-sp)*100vw;
+            margin-top: (-6/$vw-sp)*100vw;
+            @media #{$mq-pc} {
+                border-width: (7/$vw-pc)*100vw;
+                margin-top: (-6/$vw-pc)*100vw;
+            }
+        }
+        @media #{$mq-pc} {
+            top: (-38 / $vw-pc) * 100vw;
+            height: (56 / $vw-pc) * 100vw;
+            width: (59 / $vw-pc) * 100vw;
+            font-size: (16 / $vw-pc) * 100vw;
+        }
+    } @else if ($type == "question") {
+        background-color: $blue;
+        color: $white;
+        border: 2px solid $black;
+        height: (34 / $vw-sp) * 100vw;
+        width: (34 / $vw-sp) * 100vw;
+        font-family: $din;
+        font-size: (14 / $vw-sp) * 100vw;
+        margin-right: 12px;
+        @media #{$mq-pc} {
+            width: 59px;
+            height: 59px;
+            font-size: 24px;
+            border: 3px solid $black;
+            margin-right: 39px;
+        }
+    } @else if ($type == "answer") {
+        background-color: $red;
+        color: $white;
+        border: 2px solid $black;
+        width: (34 / $vw-sp) * 100vw;
+        height: (34 / $vw-sp) * 100vw;
+        font-family: $din;
+        font-size: (14 / $vw-sp) * 100vw;
+        margin-right: 12px;
+        @media #{$mq-pc} {
+            width: 59px;
+            height: 59px;
+            font-size: 24px;
+            border: 3px solid $black;
+            margin-right: 39px;
+        }
+    }
+}
